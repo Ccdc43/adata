@@ -1,0 +1,46 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:ws": "ts-node server/websocket.ts",
+    "dev:all": "concurrently \"pnpm dev\" \"pnpm dev:ws\"",
+    "build": "next build",
+    "start": "next start",
+    "start:ws": "node dist/server/websocket.js",
+    "start:all": "concurrently \"pnpm start\" \"pnpm start:ws\"",
+    "lint": "eslint",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "next": "16.0.1",
+    "nodemailer": "^7.0.10",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20",
+    "@types/nodemailer": "^7.0.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "prisma": "^6.18.0",
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}

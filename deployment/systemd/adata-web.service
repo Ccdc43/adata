@@ -1,0 +1,25 @@
+[Unit]
+Description=A-Share Data Web Application (Next.js + WebSocket)
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/adata/web
+
+# 使用 pnpm 启动 Next.js 和 WebSocket 服务
+ExecStart=/home/ubuntu/.nvm/versions/node/v22.13.0/bin/pnpm start:all
+
+# 环境变量文件
+EnvironmentFile=/home/ubuntu/adata/web/.env
+
+# 自动重启
+Restart=always
+RestartSec=10
+
+# 日志
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
